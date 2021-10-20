@@ -14,5 +14,14 @@
         <span class="link"><a href="/local-shops/shops-near-me">Find Shops</a></span>
     </p>
     <h1>Blog Home Page</h1>
+    {% if post_list %}
+    <ol>
+        {% for post in post_list %}
+        <li><a href="/blog/post-view/{{ post.id }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <h4>No Posts</h4>
+    {% endif %}
 </body>
 </html>

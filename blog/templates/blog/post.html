@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Post - Title</title>
+    <title>{{ post.title }}</title>
 </head>
 <body>
     <p>
@@ -11,6 +11,7 @@
         <span class="link"><a href="/shopping/">Shop</a></span>
         <span class="link"><a href="/local-shops/shops-near-me">Find Shops</a></span>
     </p>
-    <h2>Blog Post Page</h2>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
 </body>
 </html>
