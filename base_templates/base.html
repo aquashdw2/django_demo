@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>{% block title %}Base HTML{% endblock %}</title>
 </head>
 <body>
-    <header>
-        <h1>Page Header</h1>
-    </header>
-
+    {% block header %}
+    <p>
+        <span class="link"><a href="{% url 'landing:home' %}">Home</a></span>
+        <span class="link"><a href="{% url 'blog:home' %}">Blog</a></span>
+        <span class="link"><a href="{% url 'shop:home' %}">Shop</a></span>
+        <span class="link"><a href="{% url 'local:home' %}">Find Shops</a></span>
+    </p>
+    {% endblock %}
+    {% block app_header %}
+    {% endblock %}
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>

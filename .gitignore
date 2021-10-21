@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/django,pycharm+all,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,pycharm+all,visualstudiocode
 
+.DS_Store
+
 ### Django ###
 *.log
 *.pot
