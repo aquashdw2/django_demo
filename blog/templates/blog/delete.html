@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ post.title }}</title>
+    <title>{{ post.title }} - Delete</title>
 </head>
 <body>
     <p>
@@ -13,8 +13,10 @@
     </p>
     <h2>{{ post.title }}</h2>
     <p>{{ post.content }}</p>
-
-    <a href="/blog/post-edit/{{ post.id }}/">edit</a>&nbsp;
-    <a href="/blog/post-delete/{{ post.id }}/">delete</a>
+    <form action="/blog/post-delete/{{ post.id }}/" method="post">
+        {% csrf_token %}
+        <h3>Are you sure?</h3>
+        <input type="submit"/>
+    </form>
 </body>
 </html>

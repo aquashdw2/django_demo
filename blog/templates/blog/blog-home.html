@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Blog Home{% endblock %}
+{% block app_header %}<h1>Blog Home</h1>{% endblock %}
+{% block content %}
+{% if post_list %}
+<ol>
+    {% for post in post_list %}
+    <li><a href="{% url 'blog:post-view' post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+</ol>
+{% else %}
+<h4>No Posts</h4>
+{% endif %}
+<p>Total Posts: {{ post_list|length }}</p>
+<a href="{% url 'blog:post-write' %}">Write Post</a>
+{% endblock %}
