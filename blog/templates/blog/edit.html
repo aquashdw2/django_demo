@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ post.title }}</title>
+    <title>Write Post</title>
 </head>
 <body>
     <p>
@@ -11,10 +11,12 @@
         <span class="link"><a href="/shopping/">Shop</a></span>
         <span class="link"><a href="/local-shops/shops-near-me">Find Shops</a></span>
     </p>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
-
-    <a href="/blog/post-edit/{{ post.id }}/">edit</a>&nbsp;
-    <a href="/blog/post-delete/{{ post.id }}/">delete</a>
+    <h2>Edit Post Page</h2>
+    <form action="/blog/post-edit/{{ post.id }}/" method="POST" id="blog-edit">
+        {% csrf_token %}
+        Title: <input type="text" name="title" value="{{ post.title }}"/>
+        <input type="submit" />
+    </form>
+    <textarea name="content" form="blog-edit">{{ post.content }}</textarea>
 </body>
 </html>

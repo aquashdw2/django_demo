@@ -23,5 +23,7 @@
     {% else %}
     <h4>No Posts</h4>
     {% endif %}
+    <p>Total Posts: {{ post_list|length }}</p>
+    <a href="/blog/post-write/">Write Post</a>
 </body>
 </html>
