@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class ShopItem(models.Model):
+    item_name = models.CharField(max_length=128)
+    price = models.IntegerField()
+    description = models.TextField()
+    shop_info = models.CharField(max_length=64)
