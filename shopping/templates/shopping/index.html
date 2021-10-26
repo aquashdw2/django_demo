@@ -4,5 +4,10 @@
 
 {% block content %}
 <h1>Shop 1</h1>
-<a href="/shopping/1/item/1/">Dummy Item</a>
+<div>
+    <a href="{% url 'shop:item' 1 1 %}">Dummy Item</a>
+</div>
+<div>
+    <a href="{% url 'shop:admin' 1 %}">To Admin</a>
+</div>
 {% endblock %}
