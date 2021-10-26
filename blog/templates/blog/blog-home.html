@@ -1,16 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Blog Home{% endblock %}
-{% block app_header %}<h1>Blog Home</h1>{% endblock %}
+{% block title %}Shop 1 Blog{% endblock %}
 {% block content %}
-{% if post_list %}
-<ol>
-    {% for post in post_list %}
-    <li><a href="{% url 'blog:post-view' post.id %}">{{ post.title }}</a></li>
-    {% endfor %}
-</ol>
-{% else %}
-<h4>No Posts</h4>
-{% endif %}
-<p>Total Posts: {{ post_list|length }}</p>
-<a href="{% url 'blog:post-write' %}">Write Post</a>
+<a href="{% url 'blog:post' 1 1 %}">Dummy Post Title</a>&nbsp;
+Actions:&nbsp;
+<a href="{% url 'blog:edit' 1 1 %}">Post Edit</a>&nbsp;
+<a href="{% url 'blog:delete' 1 1 %}">Post Delete</a>
+<div>
+    <a href="{% url 'blog:write' 1 %}">Write Post</a>
+</div>
 {% endblock %}
