@@ -5,10 +5,10 @@ from shopping import views
 
 app_name = "shop"
 urlpatterns = [
-    path("", views.shopping_home, name="home"),
+    path("", views.shopping_home),
     path("admin/", views.shopping_admin),
     path("item/", views.shopping_item),
-    path("<int:shop_id>/", views.shop_home, name="shop"),
+    path("<int:shop_id>/", views.shop_home, name="home"),
     path("<int:shop_id>/item/<int:item_id>/", views.shop_item, name="item"),
     path("<int:shop_id>/admin/", views.shop_admin, name="admin"),
     path("<int:shop_id>/admin/item/add/", views.shop_admin_add_item, name="item-add"),
