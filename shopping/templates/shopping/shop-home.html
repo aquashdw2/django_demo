@@ -8,6 +8,10 @@
     <a href="{% url 'shop:item' 1 1 %}">Dummy Item</a>
 </div>
 <div>
+    <a href="{% url 'blog:home' 1 %}">To Blog</a>&nbsp;
     <a href="{% url 'shop:admin' 1 %}">To Admin</a>
+</div>
+<div>
+    <a href="{% url 'local:home' %}">Go Back</a>
 </div>
 {% endblock %}
