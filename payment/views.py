@@ -2,12 +2,21 @@ from django.shortcuts import render
 
 
 def payment_cart(request):
-    return render(request, "payment/cart.html")
+    context = {
+
+    }
+    return render(request, "payment/cart.html", context)
 
 
 def payment_purchase(request):
-    return render(request, "payment/purchase.html")
+    context = {
+
+    }
+    return render(request, "payment/purchase.html", context)
 
 
 def payment_complete(request):
-    return render(request, "payment/complete.html")
+    context = {
+
+    }
+    return render(request, "payment/complete.html", context)
