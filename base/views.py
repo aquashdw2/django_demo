@@ -6,7 +6,3 @@ def index(request):
 
     }
     return render(request, "base.html", context=context)
-
-
-def inherited(request):
-    return render(request, "base_ih.html",)
