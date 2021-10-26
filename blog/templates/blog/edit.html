@@ -12,9 +12,18 @@
         <span class="link"><a href="/local-shops/shops-near-me">Find Shops</a></span>
     </p>
     <h2>Edit Post Page</h2>
-    <form action="/blog/post-edit/{{ post.id }}/" method="POST" id="blog-edit">
+    <form action="/blog/post-edit/{{ post.id }}/" method="POST" id="blog-edit" enctype="multipart/form-data">
         {% csrf_token %}
         Title: <input type="text" name="title" value="{{ post.title }}"/>
+        {% if post.header_image %}
+        <div style="width: 300px;">
+            <p>원본 이미지</p>
+            <img src="{{ post.header_image.url }}" style="width: 100%;"/>
+        </div>
+        {% endif %}
+        <div>
+            <input type="file" id="image" name="image" />
+        </div>
         <input type="submit" />
     </form>
     <textarea name="content" form="blog-edit">{{ post.content }}</textarea>

@@ -12,9 +12,12 @@
         <span class="link"><a href="/local-shops/shops-near-me">Find Shops</a></span>
     </p>
     <h2>Write Post Page</h2>
-    <form action="/blog/post-write/" method="POST" id="blog-write">
+    <form action="/blog/post-write/" method="POST" id="blog-write" enctype="multipart/form-data">
         {% csrf_token %}
         Title: <input type="text" name="title"/>
+        <div>
+            <input type="file" id="image" name="image" />
+        </div>
         <input type="submit" />
     </form>
     <textarea name="content" form="blog-write">Enter Content</textarea>

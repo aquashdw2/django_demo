@@ -25,6 +25,8 @@ def blog_post_write(request):
         new_post = Post()
         new_post.title = request.POST["title"]
         new_post.content = request.POST["content"]
+        if request.FILES.get("image"):
+            new_post.header_image = request.FILES["image"]
         new_post.likes = 0
         new_post.save()
         return HttpResponseRedirect(reverse("blog:home"))
@@ -43,6 +45,8 @@ def blog_post_edit(request, post_id):
     elif request.method == "POST":
         target_post.title = request.POST["title"]
         target_post.content = request.POST["content"]
+        if request.FILES.get("image"):
+            target_post.header_image = request.FILES["image"]
 
         target_post.save()
 
