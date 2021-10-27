@@ -9,7 +9,6 @@ class Info(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     area = models.ForeignKey(Area, on_delete=models.SET_NULL, null=True)
     is_shop_owner = models.BooleanField(default=False)
-    shop = models.OneToOneField(Shop, on_delete=models.SET_NULL, null=True)
 
 
 class Visited(models.Model):
