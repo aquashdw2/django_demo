@@ -4,6 +4,12 @@ from local_shops.models import Area
 
 
 class Shop(models.Model):
+    user = models.OneToOneField(
+        'accounts.Info',
+        on_delete=models.SET_NULL,
+        related_name="owning_shop",
+        null=True
+    )
     area = models.ForeignKey(
         Area,
         on_delete=models.SET_NULL,
