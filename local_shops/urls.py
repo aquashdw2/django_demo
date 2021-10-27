@@ -5,5 +5,5 @@ from local_shops import views
 
 app_name = "local"
 urlpatterns = [
-    path("shops-near-me", views.local_shops, name="home"),
+    path("local-shops/", views.local_shops, name="home"),
 ]

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Cart
+{% endblock %}
+
+{% block content %}
+<h1>Items Cart Page</h1>
+    <a href="{% url 'payment:purchase' %}">Purchase Items in Cart</a>
+{% endblock %}

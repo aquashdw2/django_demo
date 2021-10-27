@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}shop 1 admin{% endblock %}
+
+{% block content %}
+<h1>Shop 1 Admin</h1>
+<div>
+    <a href="{% url 'shop:item-add' 1 %}">Item Add</a>
+</div>
+<div>
+    <a href="{% url 'shop:item-edit' 1 1 %}">Dummy Item Edit</a>
+</div>
+<div>
+    <a href="{% url 'shop:home' 1 %}">Go Back</a>
+</div>
+{% endblock %}
