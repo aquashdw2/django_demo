@@ -28,7 +28,7 @@ class ItemImages(models.Model):
     item = models.ForeignKey(
         Item,
         on_delete=models.SET_NULL,
-        related_name="post_images",
+        related_name="item_images",
         null=True
     )
     image = models.ImageField(
