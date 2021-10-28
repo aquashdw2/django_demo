@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 
-{% block title %}shop 1 admin{% endblock %}
+{% block title %}{{ shop.user.user.username }}{% endblock %}
 
 {% block content %}
-<h1>Shop 1 Admin</h1>
+<h1>{{ shop.user.user.username }} Admin</h1>
 <div>
-    <a href="{% url 'shop:item-add' 1 %}">Item Add</a>
+    <a href="{% url 'shop:item-add' shop.id %}">Item Add</a>
 </div>
+<br>
+{% for item in item_list %}
 <div>
-    <a href="{% url 'shop:item-edit' 1 1 %}">Dummy Item Edit</a>
+    <a href="{% url 'shop:item-edit' shop.id item.id %}">{{ item.name }} 수정, 가격 {{ item.price }}</a>
 </div>
+{% endfor %}
+<br>
 <div>
-    <a href="{% url 'shop:home' 1 %}">Go Back</a>
+    <a href="{% url 'shop:home' shop.id %}">Go Back</a>
 </div>
 {% endblock %}

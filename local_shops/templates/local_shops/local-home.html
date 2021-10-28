@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Local Shops Info</h1>
-<a href="{% url 'shop:home' 1 %}">Dummy Shop</a>&nbsp;
+{% for shop in shop_list %}
+<a href="{% url 'shop:home' shop.id %}">{{ shop.user.user.username }}</a>&nbsp;
 <a href="{% url 'blog:home' 1 %}">Dummy Shop Blog</a>
+{% endfor %}
 {% endblock %}

@@ -3,6 +3,7 @@
 {% block title %}shop item{% endblock %}
 
 {% block content %}
-<h1>Shop Item 1-1</h1>
-<a href="{% url 'shop:home' 1 %}">Go Back</a>
+<h1>{{ item.name }}</h1>
+<h2>가격: {{ item.price }}</h2>
+<a href="{% url 'shop:home' shop.id %}">Go Back</a>
 {% endblock %}

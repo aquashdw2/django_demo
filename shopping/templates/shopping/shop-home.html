@@ -3,13 +3,16 @@
 {% block title %}shop 1 home{% endblock %}
 
 {% block content %}
-<h1>Shop 1</h1>
+<h1>{{ shop.user.user.username }} shop home</h1>
+<!-- item list -->
+{% for item in item_list %}
 <div>
-    <a href="{% url 'shop:item' 1 1 %}">Dummy Item</a>
+    <a href="{% url 'shop:item' shop.id item.id %}">{{ item.name }}</a>
 </div>
+{% endfor %}
 <div>
     <a href="{% url 'blog:home' 1 %}">To Blog</a>&nbsp;
-    <a href="{% url 'shop:admin' 1 %}">To Admin</a>
+    <a href="{% url 'shop:admin' shop.id %}">To Admin</a>
 </div>
 <div>
     <a href="{% url 'local:home' %}">Go Back</a>
